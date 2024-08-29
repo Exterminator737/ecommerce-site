@@ -2,13 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import { StoreContext } from "../context/StoreContext";
 import Title from "../components/Title";
 import assets from "../assets/assets";
+import CartTotal from "../components/CartTotal";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, navigate } =
+  const { products, currency, cartItems, updateQuantity } =
     useContext(StoreContext);
   const [arrProducts, setArrProducts] = useState([]);
   const [cartData, setCartData] = useState([]);
-  const [productData, setProductData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setArrProducts(products?.products);
@@ -42,11 +44,10 @@ const Cart = () => {
         <Title text1={"YOUR"} text2={"CART"} />
       </div>
       <div>
-        {cartData?.map((item, index) => {
-          setProductData(
-            arrProducts?.find((product) => product.id === item.id)
+        {cartData.map((item, index) => {
+          const productData = arrProducts?.find(
+            (product) => product.id === parseInt(item.id, 10)
           );
-          console.log("productData    ", productData);
           return (
             <div
               key={index}
@@ -60,7 +61,7 @@ const Cart = () => {
                 />
                 <div>
                   <p className="text-xs sm:text-lg font-medium">
-                    {productData?.name}
+                    {productData?.title}
                   </p>
                   <div className="flex items-center gap-5 mt-2">
                     <p>
@@ -94,6 +95,19 @@ const Cart = () => {
             </div>
           );
         })}
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px]">
+          <CartTotal />
+          <div className="w-full text-end">
+            <button
+              onClick={() => navigate("/placeorder")}
+              className="bg-black text-white text-sm my-8 px-8 py-3"
+            >
+              PROCEED TO CHECKOUT
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

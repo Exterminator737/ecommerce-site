@@ -99,18 +99,18 @@ const StoreContextProvider = (props) => {
   const getCartAmount = () => {
     let total = 0;
     for (const items in cartItems) {
-      let itemInfo = products.find((product) => product._id === items);
+      let itemInfo = products?.products?.find((product) => product.id === parseInt(items, 10));
       for (const item in cartItems[items]) {
         try {
           if (cartItems[items][item] > 0) {
             total += itemInfo.price * cartItems[items][item];
           }
         } catch (error) {
-          throw error(console.error("Error calculating the total"))
+          (console.error(error))
         }
       }
     }
-    return total;
+    return (total);
   };
 
  
