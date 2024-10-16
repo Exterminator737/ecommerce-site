@@ -217,11 +217,11 @@ const Product = () => {
             ({productData.reviews?.length})
           </span>
         </p>
-        <div className="flex justify-center gap-4 border px-6 py-6 text-sm text-gray-900">
-          <div className="flex flex-col gap-3 justify-center items-center border rounded-lg w-[200px] p-5 bg-[--Main]">
+        <div className="grid lg:grid-cols-2 justify-center gap-4 border px-6 py-6 text-sm text-gray-900">
+          <div className="text-center border rounded-lg w-full lg:w-[200px] p-5 bg-gray-900 text-slate-50">
             <p className="text-5xl font-extrabold">{total.toFixed(1)}/5</p>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="grid gap-2">
             {productData.reviews?.map((item, index) => (
               <div
                 className="border p-4 rounded-lg bg-[--Main] flex flex-col gap-1"

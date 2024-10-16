@@ -14,8 +14,8 @@ const Hero = () => {
   };
   return (
     //max-w-[1400px] h-[700px]
-    <div className="grid grid-cols-[1.7fr_1fr] gap-0  pt-5 px-6">
-      <div className=" max-w-[840px] h-[420px]">
+    <div className="grid sm:grid-cols-[1.7fr_1fr] gap-4 lg:gap-0  pt-5">
+      <div className=" max-w-[840px] ">
         {/*    } */}
         <img
           onAnimationStart={nextSlide()}

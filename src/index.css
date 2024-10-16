@@ -15,6 +15,10 @@
     font-family: "Outfit";
 }
 
+img {
+    display: block;
+}
+
 a.active hr {
     display: block;
 }

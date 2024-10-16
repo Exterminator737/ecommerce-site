@@ -11,7 +11,7 @@ const Sale = () => {
   }, [products.products]);
 
   return (
-    <div className="pt-8 px-6">
+    <div className="pt-8">
       <div className="flex gap-8 items-center">
         <div className="bg-[--Lime] w-[40px] h-[80px] rounded-md"></div>
         <p className="text-[--Lime] text-2xl font-bold">Today's</p>

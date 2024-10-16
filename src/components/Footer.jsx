@@ -2,8 +2,8 @@ import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <div className=" px-16">
-      <div className="flex justify-around">
+    <div className=" mt-20">
+      <div className="grid lg:grid-cols-3 gap-10">
         <div className="flex flex-col justify-center items-center">
           <img src={assets.service1} alt="service" />
           <h1 className="font-bold text-lg">FREE AND FAST DELIVERY</h1>
@@ -20,13 +20,16 @@ const Footer = () => {
           <p>Returns are processed within 30 days</p>
         </div>
       </div>
-      <div className="bg-[--Main]">
-        <div className="flex flex-col sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-14 mt-20 text-sm">
-          <div className="bg-yellow-400">
-            <img src={assets.logo} alt="logo" className="mb-5 w-32" />
+      <div className="bg-[--Main] p-4 lg:py-10 mt-10">
+        <div className="flex flex-col sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-14 text-sm">
+          <div className="">
+            <div>
+              <img src={assets.logo} alt="logo" className="mb-5 w-10 lg:w-32" />
+              <span className="text-[--Lime] font-semibold text-xl">ShopScape</span>
+            </div>
             <p className="w-full md:w-2/3 text-gray-600">
-              We have clothes that suits your style and which you’re proud to
-              wear. From women to men.
+              We are always ready to provide you with a shopping experience like
+              no other!
             </p>
           </div>
 
@@ -67,7 +70,6 @@ const Footer = () => {
             <p className="py-5 text-sm text-center">
               Copyright 2024@thrifter.com - All Right Reserved.
             </p>
-            <img src={assets.payment} alt="payment" />
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ const NewsletterBox = () => {
           className="w-full sm:flex-1 outline-none"
           required
         />
-        <button type="submit" className="bg-black font-bold text-white text-xs px-10 py-4 hover:bg-[--Lime] hover:text-gray-900">SUBSCRIBE</button>
+        <button type="submit" className="bg-black font-bold text-white text-xs px-10 py-4 hover:bg-[--Lime] hover:text-gray-900 transition-all duration-500a">SUBSCRIBE</button>
       </form>
     </div>
   );
